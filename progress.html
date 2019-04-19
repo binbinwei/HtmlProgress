@@ -1,0 +1,268 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>宝武审核进度</title>
+
+    <style>
+        .steps {
+            width: 760px;
+            height: 95px;
+            position: relative;
+            margin: 0 auto;
+            margin-top:50px;
+        }
+        .first {
+            position: absolute;
+            width: 230px;
+            height: 95px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .first .big-circle {
+            width: 33px;
+            height: 33px;
+            border-radius: 50%;
+            background: #DBD8D8;
+            position: absolute;
+            left: 60px;
+            top: 31px;
+            text-align: center;
+        }
+        .first .min-circle, .second .min-circle, .third .min-circle, .fourth .min-circle {
+            width: 23px;
+            height: 23px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-top: 5px;
+            text-align: center;
+            line-height: 23px;
+            color: #fff;
+            font-size: 14px;
+            font-weight: bold;
+            background: #999;
+        }
+        .round_active {
+            background: #02994C !important;
+        }
+        .round_active2 {
+            background: #ff3c44 !important;
+        }
+        .first .title {
+            position: absolute;
+            top: 0;
+            left: 50px;
+            line-height: 24px;
+            color: #8A8A8A;
+        }
+        .first .tame {
+            position: absolute;
+            left: 5px;
+            bottom: 0;
+            color: #A19F9D;
+            font-size: 14px;
+        }
+        .first .big-line {
+            width: 186px;
+            height: 10px;
+            background: #DDDEDE;
+            position: absolute;
+            left: 88px;
+            top: 42px;
+            text-align: center;
+            z-index: 999;
+        }
+        .first .min-line, .second .min-line, .third .min-line, .fourth .min-line {
+            width: 190px;
+            height: 4px;
+            margin-top: 3px;
+            background: #999;
+        }
+        .line_active {
+            background: #02994C !important;
+        }
+        .line_active2 {
+            background: #ff3c44 !important;
+        }
+        .second {
+            width: 210px;
+            position: absolute;
+            top: 0;
+            left: 230px;
+            height: 95px;
+        }
+        .second .big-circle, .third .big-circle, .fourth .big-circle {
+            width: 33px;
+            height: 33px;
+            border-radius: 50%;
+            background: #DBD8D8;
+            position: absolute;
+            left: 43px;
+            top: 31px;
+            text-align: center;
+        }
+        .second .title, .fourth .title, .third .title {
+            position: absolute;
+            top: 0;
+            left: 30px;
+            line-height: 24px;
+            color: #8A8A8A;
+        }
+        .second .tame, .third .tame, .fourth .tame {
+            position: absolute;
+            left: -10px;
+            bottom: 0;
+            color: #A19F9D;
+            font-size: 14px;
+        }
+        .second .big-line, .third .big-line, .fourth .big-line {
+            width: 186px;
+            height: 10px;
+            background: #DDDEDE;
+            position: absolute;
+            left: 71px;
+            top: 42px;
+            text-align: center;
+            z-index: 999;
+        }
+        .third {
+            width: 210px;
+            position: absolute;
+            top: 0;
+            left: 440px;
+            height: 95px;
+        }
+        .fourth {
+            width: 210px;
+            position: absolute;
+            top: 0;
+            left: 648px;
+            height: 95px;
+        }
+    </style>
+</head>
+<body>
+<div class="steps">
+    <div class="first">
+        <div class="title">
+            提交资料
+        </div>
+        <div class="big-circle">
+            <div id="firststep" class="min-circle round_active">
+                √
+            </div>
+        </div>
+        <div id="tsmsg" class="tame">
+
+            2018年12月30日18:11:25
+        </div>
+        <div class="big-line">
+            <div id="firstline" class="min-line line_active"></div>
+        </div>
+    </div>
+    <div class="second">
+        <div class="title">
+            系统服务部审核
+        </div>
+        <div class="big-circle">
+            <div id="secondstep" class="min-circle round_active">
+                √
+            </div>
+        </div>
+        <div class="tame">
+            2018年12月30日18:11:25
+        </div>
+        <div class="big-line">
+            <div id="secondline" class="min-line line_active"></div>
+        </div>
+    </div>
+    <div class="third">
+        <div class="title">
+           测试组测试
+        </div>
+        <div class="big-circle">
+            <div id="thirdstep" class="min-circle round_active">
+                √
+            </div>
+        </div>
+        <div class="tame">
+            2018年12月30日18:11:25
+        </div>
+        <div class="big-line">
+            <div id="thirdline" class="min-line line_active"></div>
+        </div>
+    </div>
+    <div class="fourth">
+        <div class="title">
+           完成
+        </div>
+        <div class="big-circle" >
+            <div id="fourthstep" class="min-circle round_active">
+                √
+            </div>
+        </div>
+        <div class="tame">
+            2018年12月30日18:11:25
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    function showStep(num){
+        document.getElementById("tsmsg").style.visibility="hidden";
+        if(num == 1){
+            document.getElementById("firststep").className='min-circle round_active';
+            document.getElementById("firstline").className='min-line line_active';
+
+            document.getElementById("secondstep").className='min-circle round_active';
+            document.getElementById("secondline").className='min-line';
+
+            document.getElementById("thirdstep").className='min-circle';
+            document.getElementById("thirdline").className='min-line';
+
+            document.getElementById("fourthstep").className='min-circle';
+        }else if(num == 2){
+            document.getElementById("firststep").className='min-circle round_active';
+            document.getElementById("firstline").className='min-line line_active';
+
+            document.getElementById("secondstep").className='min-circle round_active';
+            document.getElementById("secondline").className='min-line line_active';
+
+            document.getElementById("thirdstep").className='min-circle round_active';
+            document.getElementById("thirdline").className='min-line';
+
+            document.getElementById("fourthstep").className='min-circle';
+        }else if(num == 3){
+            document.getElementById("firststep").className='min-circle round_active';
+            document.getElementById("firstline").className='min-line line_active';
+
+            document.getElementById("secondstep").className='min-circle round_active';
+            document.getElementById("secondline").className='min-line line_active';
+
+            document.getElementById("thirdstep").className='min-circle round_active';
+            document.getElementById("thirdline").className='min-line line_active';
+
+            document.getElementById("fourthstep").className='min-circle round_active';
+        }
+        else if(num == 0){
+            document.getElementById("firststep").className='min-circle round_active2';
+            document.getElementById("firstline").className='min-line line_active2';
+
+            document.getElementById("secondstep").className='min-circle round_active2';
+            document.getElementById("secondline").className='min-line';
+
+            document.getElementById("thirdstep").className='min-circle';
+            document.getElementById("thirdline").className='min-line';
+
+            document.getElementById("fourthstep").className='min-circle';
+            document.getElementById("tsmsg").style.visibility="visible";
+        }
+
+
+    }
+
+    showStep(3);
+
+</script>
+</html>
